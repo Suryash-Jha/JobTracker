@@ -7,7 +7,7 @@ def hello(req):
 
 def home(req):
     data={"status": "home"}
-    return JsonResponse(data)
+    return render(req, "JobApp\index.html")
 
 def addJob(req):
     data= {"status": "hello"}
