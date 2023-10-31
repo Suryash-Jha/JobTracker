@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block mainBody%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Job</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flex-h {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex-v {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form method="post" autocomplete="off">
+        {% csrf_token %} {% for field in form %}
+        <div class="flex-h">
+          <label for="{{ field.id_for_label }}">
+            {% if field.field.required %}
+            <span style="color: red">*</span>
+            {% endif %}{{ field.label }} :
+          </label>
+          {{field}} {% if field.error %}
+          <small style="color: grey">{{ field.error }}</small>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock %}

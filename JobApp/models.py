@@ -20,10 +20,14 @@ class JobModel(models.Model):
     role= models.CharField(max_length=10)
     status= models.CharField(max_length=15, choices=StatusOptions)
     location= models.CharField(max_length=20)
-    onsite= models.BooleanField(default=1)
-    referralRecieved= models.BooleanField(default=0)
+    onsite= models.BooleanField(default=True)
+    referralRecieved= models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.companyName+ str(self.id)
+    
 
 
 

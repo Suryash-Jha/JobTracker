@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    nav {
+      display: flex;
+      flex-direction: row;
+      height: 3vh;
+      width: 100vw;
+      margin-top: 2vh;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 5vh;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      margin: 1vh;
+    }
+  </style>
   <body>
-    <h1>BASE</h1>
-    {% block mainBody %}
-    {% endblock %}
+    <nav>
+      <a href="/list">List</a>
+      <a href="/add">Add</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/login">Login</a>
+      <a href="/SignUp">Sign Up</a>
+    </nav>
+    {% block mainBody %} {% endblock %}
   </body>
 </html>
