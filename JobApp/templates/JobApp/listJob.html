@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <div class="container">
+      {% for i in data %}
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 90%;
+        "
+      >
+        <h1>{{i.companyName}}</h1>
+        <h2>{{i.updated_at}}</h2>
+        <h2>{{i.status}}</h2>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

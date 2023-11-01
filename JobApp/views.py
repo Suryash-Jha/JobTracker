@@ -90,7 +90,7 @@ def listJobs(req):
         x['updated_at']= int(i.updated_at.timestamp())
 
         finalDict.append(x)
-    return JsonResponse({"data" : finalDict})
+    return render(req, "JobApp\listJob.html", context={"data" : finalDict})
 
 
 
