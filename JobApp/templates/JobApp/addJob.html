@@ -30,7 +30,7 @@
   </style>
   <body>
     <div class="container">
-      <form method="post" autocomplete="off">
+      <form method="post" autocomplete="off" id="jobForm">
         {% csrf_token %} {% for field in form %}
         <div class="flex-h">
           <label for="{{ field.id_for_label }}">
@@ -48,5 +48,14 @@
       </form>
     </div>
   </body>
+  <script>
+    function resetForm() {
+      document.getElementById("jobForm").reset();
+    }
+
+    document.getElementById("jobForm").addEventListener("submit", function () {
+      resetForm();
+    });
+  </script>
 </html>
 {% endblock %}

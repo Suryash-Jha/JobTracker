@@ -75,9 +75,22 @@ def deleteJob(req, id):
     return JsonResponse(data)
 
 def listJobs(req):
-    arr= [3, 3, 5]
-    data= {"status": "hello", "arr": arr}
-    return JsonResponse(data)
+    data= JobModel.objects.all()
+    finalDict=[]
+    for i in data:
+
+        x={}
+        x['companyName']= i.companyName
+        x['role']= i.role
+        x['status']= i.get_status_display()
+        x['location']= i.location
+        x['onsite']= i.onsite
+        x['referralRecieved']= i.referralRecieved
+        x['created_at']= int(i.created_at.timestamp())
+        x['updated_at']= int(i.updated_at.timestamp())
+
+        finalDict.append(x)
+    return JsonResponse({"data" : finalDict})
 
 
 
