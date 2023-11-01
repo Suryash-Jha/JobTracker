@@ -19,22 +19,50 @@
       width: 100vw;
       height: 100vh;
     }
+    .inner_container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 90vw;
+      margin: 2%;
+      padding: auto;
+    }
+
+    .black_text {
+      font: 400;
+      color: black;
+      padding: 1vh;
+    }
+    .AP {
+      background-color: aqua;
+    }
+    .RJ {
+      background-color: red;
+    }
+    .NR {
+      background-color: grey;
+    }
+    .IV {
+      background-color: yellow;
+    }
+    .OA {
+      background-color: violet;
+    }
+    .AC {
+      background-color: green;
+    }
+    .RR {
+      background-color: salmon;
+    }
   </style>
   <body>
     <div class="container">
       {% for i in data %}
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: 90%;
-        "
-      >
+      <div class="inner_container">
         <h1>{{i.companyName}}</h1>
         <h2>{{i.updated_at}}</h2>
-        <h2>{{i.status}}</h2>
+        <h2 class="{{ i.statusKey }} black_text">{{i.status}}</h2>
       </div>
       {% endfor %}
     </div>

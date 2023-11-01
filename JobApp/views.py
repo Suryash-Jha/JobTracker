@@ -83,6 +83,7 @@ def listJobs(req):
         x['companyName']= i.companyName
         x['role']= i.role
         x['status']= i.get_status_display()
+        x['statusKey']= i.status
         x['location']= i.location
         x['onsite']= i.onsite
         x['referralRecieved']= i.referralRecieved

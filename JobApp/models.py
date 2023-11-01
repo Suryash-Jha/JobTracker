@@ -10,7 +10,6 @@ class JobModel(models.Model):
         ("IV", "Interview"),
         ("OA", "Online Assessment"),
         ("AC", "Accepted"),
-        ("AC", "Accepted"),
         ("RR", "Response Recieved")
 
     ]
